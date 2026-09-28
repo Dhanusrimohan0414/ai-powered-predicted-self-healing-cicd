@@ -1,0 +1,222 @@
+# =============================================================================
+#  AI-Powered Predictive Self-Healing CI/CD Pipeline — .gitignore
+# =============================================================================
+
+
+# =============================================================================
+#  Python — Bytecode & Cache
+# =============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+
+# =============================================================================
+#  Python — Virtual Environments
+# =============================================================================
+venv/
+.venv/
+env/
+.env/
+ENV/
+.ENV/
+virtualenv/
+
+
+# =============================================================================
+#  Python — Distribution / Packaging
+# =============================================================================
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+MANIFEST
+
+
+# =============================================================================
+#  Python — Testing & Coverage
+# =============================================================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+nosetests.xml
+test-results/
+
+
+# =============================================================================
+#  Python — Type Checkers & Linters
+# =============================================================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.pyre/
+.ruff_cache/
+
+
+# =============================================================================
+#  Jupyter Notebooks
+# =============================================================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+
+# =============================================================================
+#  Logs — Runtime-generated files
+#  (pipeline.log and feedback.jsonl are auto-created at runtime; they are
+#   large and user-specific — exclude them but keep the logs/ folder itself)
+# =============================================================================
+logs/pipeline.log
+logs/feedback.jsonl
+
+# Keep the logs/ directory tracked so the folder exists in the repo
+!logs/.gitkeep
+
+
+# =============================================================================
+#  Generated / Runtime Data
+#  build_history.csv is a live runtime artefact that changes every run.
+#  training_data.csv is auto-regenerated from the code on first launch.
+#  Both are excluded; only the manually-curated seed data should be tracked.
+# =============================================================================
+data/build_history.csv
+data/training_data.csv
+
+# If you want to keep data/ in the repo tree, add a placeholder:
+!data/.gitkeep
+
+
+# =============================================================================
+#  ML Model Artefact
+#  random_forest.pkl is auto-trained on first launch and is a large binary.
+#  Exclude it; let each user train their own copy locally.
+# =============================================================================
+model/*.pkl
+model/*.joblib
+model/*.h5
+model/*.pt
+model/*.pth
+model/*.onnx
+
+# Keep the model/ directory itself
+!model/.gitkeep
+
+
+# =============================================================================
+#  Environment Variables & Secrets
+# =============================================================================
+.env
+.env.*
+!.env.example
+*.env
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+api_keys.txt
+config.local.*
+
+
+# =============================================================================
+#  IDE & Editor Files
+# =============================================================================
+
+# VS Code / Kiro
+.vscode/
+.kiro/
+
+# JetBrains (PyCharm, IntelliJ, etc.)
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+
+# Emacs
+\#*\#
+.\#*
+
+
+# =============================================================================
+#  Operating System Files
+# =============================================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+
+
+# =============================================================================
+#  Streamlit
+# =============================================================================
+.streamlit/secrets.toml
+
+
+# =============================================================================
+#  Temporary & Miscellaneous Files
+# =============================================================================
+*.tmp
+*.temp
+*.bak
+*.orig
+*.log
+*.out
+*.pid
+*.seed
+*.gz
+*.zip
+*.tar
+*.rar
+
+
+# =============================================================================
+#  Node / NPM (in case any JS tooling is added later)
+# =============================================================================
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
